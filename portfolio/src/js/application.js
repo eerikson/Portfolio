@@ -1,6 +1,5 @@
 "use strict";
 
-
 var Photo = function ( options ) {
 
 	this.el = {};
