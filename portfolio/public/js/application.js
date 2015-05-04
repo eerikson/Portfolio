@@ -24,6 +24,10 @@ var Photo = function ( options ) {
 
 	this.imageEl = {};
 
+	this.isFirefox = ( function () {
+		return 
+	})();
+
 	this.determineWhichSizeToLoad = function () {
 
 		// Are we on a retina screen?
@@ -76,7 +80,9 @@ var PhotoGallery = {
 	photoList : [],
 
 	modal : document.querySelector(".modal-photo-viewer"),
+
 	modalImg : document.querySelector(".modal-photo-viewer img"),
+
 	modalPhotoIndex : 0,
 
 	
@@ -101,10 +107,19 @@ var PhotoGallery = {
 
 			// Provide fade-in for image swap
 			if ( this.modalImg.complete ) {
+				// IF image is already complete (or the user is on Firefox, which
+				// does not have this property implemented properly), 
+				// just add the class immediately
 				this.handleModalImgLoad.apply( this.modalImg );
+
+				
+
 			} else {
+
 				this.modalImg.addEventListener("load", this.handleModalImgLoad );
 			}
+
+			console.log( this.modalImg.style.height );
 
 		}.bind( this ), 50);
 
@@ -134,8 +149,11 @@ var PhotoGallery = {
 
 		eventObj.stopPropagation();
 
-		// Fade out whatever image we're currently viewing
-		this.modalImg.classList.remove("ready");
+		// Fade out whatever image we're currently viewing (unless we're on firefox)
+		if ( navigator.userAgent.toLowerCase().indexOf('firefox') === -1 ) {
+			this.modalImg.classList.remove("ready");
+		}
+		
 
 		// Get next photo based on current index...
 
