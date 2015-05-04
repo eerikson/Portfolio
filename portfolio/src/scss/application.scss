@@ -1,0 +1,40 @@
+@import "bourbon/bourbon";
+@import "vendor/normalize";
+@import "vendor/foundation/functions";
+@import "vendor/foundation";
+
+// Color definitions
+$crushed-black: #4a4a4a;
+$link-color: #17b9d6;
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #eaeaea;
+}
+
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	// height: 50px;
+	z-index:10;
+	background-color: rgba(255,255,255,0.9);
+
+	h1 {
+		font-size: rem-calc( 17 );
+		color: $crushed-black;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin: 15px auto;
+
+		a {
+			color: inherit;
+		}
+	}
+}
+
+@import "app/landing-page";
+@import "app/photos";
+@import "app/frontend";

@@ -1,0 +1,78 @@
+.page.landing {
+
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+
+	li {
+		display: block;
+	}
+
+	h2 {
+		margin: 0;
+		font-weight: inherit;
+		font-size: inherit;
+	}
+
+	a {
+		color: inherit;
+		@include transition( color 0.1s linear );
+		position: relative;
+
+		// Custom underlines
+		&:after {
+			content: "";
+			position: absolute;
+			background-image: url("/img/arrow.svg");
+			right: -35px;
+			width: 25px;
+			top: 2px;
+			bottom: 0;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+			opacity: 0;
+			@include transition( all 0.15s ease );
+			@include transform( translate3d(-20%, 0, 0) );
+		}
+
+		&:hover {
+			color: $link-color;
+
+			&:after {
+				opacity: 1;
+				@include transform( translate3d(0,0,0 ) );
+			}
+		}
+	}
+
+	.sections {
+		@include grid-row();
+		margin-top: 20vh;
+	
+		.section {
+			@include grid-column($columns: 4, $center: true);
+			letter-spacing: rem-calc(-0);
+			font-weight: 100;
+			font-size: rem-calc(46);
+		}
+	}
+
+	@media #{$medium-only} {
+		.sections {
+			.section {
+				@include grid-column($columns: 10, $center: true);
+			}
+		}
+	}
+
+	@media #{$small-only} {
+		.sections {
+			.section {
+				@include grid-column($columns: 10, $center: true);
+			}
+		}
+	}
+}
+

@@ -1,0 +1,76 @@
+.page.frontend {
+	padding-top: 150px;
+	
+
+	.inner {
+		@include grid-row();
+	}
+
+	ul.sites {
+		margin: auto;
+		list-style: none;	
+		@include grid-column($columns: 8, $center: true);
+	}
+
+	.site {
+		
+		@include grid-row($behavior: nest);
+		margin-bottom: 50px;
+	}
+
+	.site-title {
+		font-weight: 600;
+		text-align: center;
+		font-size: rem-calc(20);
+		line-height: rem-calc(22);
+		color: #222222;
+	}
+
+	.client {
+		font-size: rem-calc(16);
+		line-height: rem-calc(18);
+		text-align: center;
+		font-weight: 200;
+		color: #4a4a4a;
+	}
+
+	.screenshot {
+		border: 18px solid white;
+		box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		margin-top: 20px;
+	}
+
+	.description {
+		margin-top: 25px;
+		margin-bottom: 25px;
+		@include grid-column($columns: 8, $center: true);
+		color: #808080;
+	}
+
+	.features {
+		@include grid-column($columns: 8, $center: true);
+		// text-align: center;
+
+
+		ul {
+			list-style: square;
+			margin: auto;
+		}
+
+		.heading {
+			font-weight: 600;
+			font-size: rem-calc(13);
+			line-height: rem-calc(16);
+			letter-spacing: rem-calc(1);
+			text-transform: uppercase;
+			color: #808080;
+
+		}
+		li {
+			color: #808080;
+			margin-left: 20px;
+			font-size: rem-calc(13);
+		}
+	}
+
+}
