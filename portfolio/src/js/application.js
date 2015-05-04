@@ -175,8 +175,10 @@ var PhotoGallery = {
 
 		eventObj.stopPropagation();
 
-		// Fade out whatever image we're currently viewing
-		this.modalImg.classList.remove("ready");
+		// Fade out whatever image we're currently viewing (unless we're on firefox)
+		if ( navigator.userAgent.toLowerCase().indexOf('firefox') === -1 ) {
+			this.modalImg.classList.remove("ready");
+		}
 
 		// Get next photo based on current index...
 
