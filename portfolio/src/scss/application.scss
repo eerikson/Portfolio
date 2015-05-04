@@ -7,9 +7,46 @@
 $crushed-black: #4a4a4a;
 $link-color: #17b9d6;
 
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-weight: 100;
+  src: url('/css/fonts/HelveticaNeue-ultra-light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-weight: 200;
+  src: url('/css/fonts/HelveticaNeue-thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-weight: 300;
+  src: url('/css/fonts/HelveticaNeue-light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-weight: 400;
+  src: url('/css/fonts/HelveticaNeue.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-weight: 500;
+  src: url('/css/fonts/HelveticaNeue-medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-weight: 600;
+  src: url('/css/fonts/HelveticaNeue-bold.woff') format('woff');
+}
+
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	background-color: #eaeaea;
+	-webkit-font-smoothing: antialiased;
 }
 
 .site-header {
