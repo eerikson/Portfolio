@@ -73,4 +73,19 @@
 		}
 	}
 
+	@media #{$small-only} {
+		ul.sites {
+			@include grid-column($columns: 10, $center: true);
+		}
+
+		.screenshot {
+			border: 12px solid white;
+		}
+
+		.description,
+		.features {
+			@include grid-column($columns: 12, $collapse: true);
+		}
+	}
+
 }

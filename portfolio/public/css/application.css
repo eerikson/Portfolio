@@ -6092,7 +6092,8 @@ body {
 
 .photos.page {
   overflow: hidden;
-  background: black; }
+  background: black;
+  padding-top: 52px; }
   .photos.page ul {
     list-style: none;
     margin: 0; }
@@ -6186,6 +6187,9 @@ body {
   .photos.page .photo-list {
     width: 100%;
     background-color: #1d1d1d; }
+  @media only screen and (max-width: 40em) {
+    .photos.page li {
+      width: 100%; } }
 
 .modal-photo-viewer {
   position: fixed;
@@ -6207,12 +6211,15 @@ body {
   transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
+  @media only screen and (max-width: 40em) {
+    .modal-photo-viewer {
+      display: none !important; } }
   .modal-photo-viewer img {
     margin: auto;
     max-width: none;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 55%;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     transition: all 0.5s ease;
@@ -6361,3 +6368,19 @@ body {
       color: #808080;
       margin-left: 20px;
       font-size: 0.8125rem; }
+  @media only screen and (max-width: 40em) {
+    .page.frontend ul.sites {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem;
+      width: 83.33333%;
+      float: left;
+      margin-left: auto;
+      margin-right: auto;
+      float: none; }
+    .page.frontend .screenshot {
+      border: 12px solid white; }
+    .page.frontend .description, .page.frontend .features {
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+      float: left; } }

@@ -81,6 +81,10 @@ var PhotoGallery = {
 
 	
 	showPhotoModalViewerWithPhoto : function ( Photo ) {
+
+		if ( window.innerWidth < 640 ) {
+			return false;	// Don't activate for mobile.
+		} 
 	
 		// Show modal with full image src
 		this.modal.classList.add("show");
@@ -198,45 +202,6 @@ var PhotoGallery = {
 			this.photoList.push( new Photo( { el : element } ) );
 		}.bind( this ) );
 
-		// console.log( this.photoList );
-
-		// 
-
-		// // Photo events
-		// Array.prototype.forEach.call( photos, function ( photoEl, index ) {
-
-		// 	// Handle clicks
-		// 	photoEl.addEventListener( "click", function ( eventObj ) {
-
-		// 		var fullImageSrc = this.dataset.fullImagePath;
-
-		// 		modal.querySelector("img").src = fullImageSrc;
-
-		// 		// Show modal with full image src
-		// 		modal.classList.add("show");
-		// 		console.log( this.parentNode );
-		// 		console.log( Array.prototype.indexOf.call( this.parentNode.children, this ) );
-
-		// 		// fade in via async function
-		// 		window.setTimeout( function () {
-
-		// 			modal.classList.add("animate");
-
-		// 			// Provide fade-in for image swap
-		// 			if ( modalImg.complete ) {
-		// 				handleModalImgLoad.apply( modalImg );
-		// 			} else {
-		// 				modalImg.addEventListener("load", handleModalImgLoad );
-		// 			}
-		// 		}, 50);
-				
-		// 	} );
-
-		// 	// Handle image loads
-		// 	photoEl.querySelector("img").addEventListener("load", function ( eventObj ) {
-		// 		this.classList.add("ready");
-		// 	})
-		// } );
 	
 
 		
