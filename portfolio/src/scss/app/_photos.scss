@@ -46,7 +46,7 @@
 		// Only show hovers for viewports which can show modal
 		@media #{$medium-up} {
 			&:hover {
-				
+
 				img {
 					@include transform( scale3d(0.9,0.9,0.9 ));
 				}
@@ -81,8 +81,15 @@
 			// max-height: 100%;
 			max-width: none;
 			display: block;
-			width: 112%;
-			margin: -6%;
+
+			@media #{$medium-up} {
+				width: 112%;
+				margin: -6%;
+			}
+
+			width: 100%;
+			margin: 0;
+
 			@include transform( translate3d(0,0,0px));
 			@include transition( all 0.2s ease );
 			@include transform-origin(center);
@@ -99,7 +106,7 @@
 	.photo-list {
 		width: 100%;
 		// position: relative;
-		background-color: #1d1d1d;	
+		background-color: #1d1d1d;
 
 	}
 
@@ -131,7 +138,7 @@
 	}
 
 	img {
-		
+
 		// display: block;
 		margin: auto;
 		max-width: none;
@@ -196,7 +203,7 @@
 		&:focus {
 			outline: none;
 		}
-	
+
 		&.next {
 			right: 0;
 		}
